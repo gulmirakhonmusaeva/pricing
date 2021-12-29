@@ -126,7 +126,6 @@ html {
 
 .toggle-btn .button.clicked{
     background-color: #fff;
-
 }
 
 .toggle-btn:hover{
@@ -135,7 +134,6 @@ html {
 }
 .cards {
     width:1050px;
-    /* box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5); */
     display: flex;
     justify-content: center;
     align-items:center;

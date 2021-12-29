@@ -32,22 +32,5 @@ monthEl.addEventListener('click', function(){
     month()
 })
 
-// toggleBtnEl.addEventListener('click', function(){
-//     // let isMonth = toggleBtnEl.classList.contains('month')
-//     let isAnnual = toggleBtnEl.classList.contains('annual')
-//         // annualEl.classList.add('clicked')
-//         // basPriceEl.textContent= '199.99'
-//         // proPriceEl.innerHTML= '249.99'
-//         // mastPriceEl.innerHTML= '399.99'
-//     if (isAnnual) {
-//         annual()
-//     } else { 
-//         // basPriceEl.innerHTML= '19.99'
-//         // proPriceEl.innerHTML= '24.99'
-//         // mastPriceEl.innerHTML= '39.99'
-//         month()
-//     }
-// })
-
 
 
