@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing</title>
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
 
 </head>
 <body>
@@ -15,19 +15,28 @@
             <div class="main">
                 <h2 class="title">Our pricing</h2>
                 <div class="toggle">
-                    <span>Annually</span>
-                    <div class="toggle-btn">
-                        <button class="button annual"></button>
-                        <button class="button month"></button>
+                    <!-- Switch radios -->
+                    <input class="switch-input-annual visually-hidden" type="radio" name="payment-period" id="annual-payment-radio" value="annual">
+                    <input class="switch-input-month visually-hidden" type="radio" name="payment-period" id="month-payment-radio" value="month">
+
+                    <label class="switch-label" for="annual-payment-radio">Monthly</label>
+                    <!-- SWITCH-CONTROL -->
+                    <div class="switch-control">
+                        <div class="switch-circle"></div>
+                        <label class="switch-control-annual" for="annual-payment-radio" for="annual-payment-radio"></label>
+                        <label class="switch-control-month" for="month-payment-radio" for="month-payment-radio"></label>
                     </div>
-                    <span>Monthly</span>
+                    
+                    <label class="switch-label" for="month-payment-radio">Annualy</label>
                 </div>
+
+
                 <div class="cards">
                     <div class="basic-card">
                         <h3 class="card-title">Basic</h3>
                         <div>
                             <span class="value">$</span>
-                            <span class="price basic-price">19.99</span>
+                            <span class="price basic-price" data-annually="19.99" data-monthly="199.99">19.99</span>
                         </div>
                         <ul class="list">
                             <li class="list-item"><a class="list-item-link" href="">500 GB Storage</a></li>
@@ -40,7 +49,7 @@
                         <h3 class="card-title">Professional</h3>
                         <div>
                             <span class="value">$</span>
-                            <span class="price professional-price">24.99</span>
+                            <span class="price professional-price" data-annually="24.99" data-monthly="249.99">24.99</span>
                         </div>
                         <ul class="list">
                             <li class="list-item"><a class="list-item-link" href="">1 TB Storage</a></li>
@@ -53,7 +62,7 @@
                         <h3 class="card-title">master</h3>
                         <div>
                             <span class="value">$</span>
-                            <span class="price master-price">39.99</span></div>
+                            <span class="price master-price" data-annually="39.99" data-monthly="399.99">39.99</span></div>
                         <ul class="list">
                             <li class="list-item"><a class="list-item-link" href="">2 TB Storage</a></li>
                             <li class="list-item"><a class="list-item-link" href="">10 Users Allowed</a></li>
@@ -67,6 +76,6 @@
     </section>
     
 
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
