@@ -15,11 +15,11 @@ html {
     scroll-behavior: smooth;
   }
   
-  *:focus {
+  /* *:focus {
     outline: 2px dotted rgb(253, 130, 130);
     outline-offset: 3px;
   }
-  
+   */
   *,
   *::after,
   *::before {
@@ -29,16 +29,20 @@ html {
   body {
     margin: 0;
     padding: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    background: var(--bg-color);
+    background-image: url('./img/bottom-design.png'), url('./img/top-design.png');
+    background-position: left -120px bottom -120px, top -100px right -100px;
+    background-repeat: no-repeat;
     font-size: 15px;
     line-height: 28px;
     font-weight: 700;
     line-height: 16px;
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
-    background: var(--bg-color);
+    
   }
   
   img {
@@ -52,22 +56,6 @@ html {
       color: var(--text-color);
   }
 
-  .button {
-    display: inline-block;
-    outline: none;
-    border: none;
-    background: none;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-decoration: none;
-  
-    border-radius: 100px;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-
   .container {
     width: 100%;
     max-width: 1340px;
@@ -76,13 +64,9 @@ html {
     margin-right: auto;
     margin-left: auto;
   }
-
-
   .section {
       padding: 40px;
-      background-image: url('/img/top-design.png'),url('/img/bottom-design.png');
-      background-repeat: no-repeat;
-      background-position: top right , bottom left;
+      
 }
 .main {
     display: flex;
@@ -98,40 +82,62 @@ html {
     font-weight: bold;
    
 }
+
+    /* SWITCH*/
 .toggle {
     margin-bottom: 65px;
     display: flex;
     justify-content: space-between;
    align-items: center;
 }
-.toggle span{
+.switch-label{
     mix-blend-mode: normal;
     opacity: 0.5;
+    cursor: pointer;
 }
 
-.toggle-btn{
+.switch-control{
+    position: relative;
+    width: 56px;
+    height: 32px;
     padding: 4px;
-    background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
     border-radius: 16px;
     margin-left: 24px;
     margin-right: 24px;
+    background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
 }
 
-.toggle-btn .button{
-    width: 20px;
-    height: 20px;
-    border:none;
+.switch-circle{
+    width: 24px;
+    height: 24px;
     border-radius:50%;
-}
-
-.toggle-btn .button.clicked{
     background-color: #fff;
 }
 
-.toggle-btn:hover{
-    mix-blend-mode: normal;
-    opacity: 0.5;
+.switch-control-annual,
+.switch-control-month {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: margin 0.3s ease;
 }
+
+.switch-input-annual:checked ~ .switch-control .switch-control-month,
+.switch-input-month:checked ~ .switch-control .switch-control-annual {
+    z-index: 3;
+}
+
+.switch-input-month:checked ~ .switch-control .switch-circle {
+    margin-left: 24px;
+}
+
+.visually-hidden {
+    visibility: hidden;
+}
+
 .cards {
     width:1050px;
     display: flex;
@@ -174,7 +180,6 @@ html {
     font-size: 72px;
     line-height: 71px;
     letter-spacing: -2.16px;
-
 }
 .value {
     margin-right: 8px;
@@ -194,7 +199,6 @@ html {
 
 .list-item:last-child{
     border-bottom: 1px solid ;
-    
     margin-bottom: 32px;
 }
 .list-item-link{
@@ -207,7 +211,6 @@ html {
 .professional-card .list-item-link{
    color: #fff;
 }
-
 .professional-card .card-button {
     color: var(--btn-card-bg);
     background: #fff;
@@ -238,4 +241,10 @@ html {
 }
 .clicked {
     background-color: #fff;
+}
+
+@media  (max-width:600px) {
+    .cards {
+        flex-direction:column;
+    }
 }
